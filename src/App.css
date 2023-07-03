@@ -6,7 +6,11 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif, Georgia, 'Times New Roman', Times, serif;
 }
-
+:root{
+  --haze:#bdbdbd;
+  --titlecolor:black;
+  --primary:#fff;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -37,7 +41,7 @@ html {
 
 .card {
   width: 400px;
-  background-color: #fff;
+  background-color: var(--primary);
   border-radius: 10px;
   min-height: 320px;
   box-shadow: 1px 12px 5px 6px rgba(0, 0, 0, alpha);
@@ -54,15 +58,18 @@ html {
   transition: all 0.2s ease ;
 }
 .card:hover{
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 .card .fa-times{
   position: absolute;
   right: 4%;
+  color: red;
+  font-weight: 100;
 }
-.card .fa-times:hover{
+.fa-times:hover{
   cursor: pointer;
 }
+
 .card .img img {
   width: 360px;
   height: 200px;
@@ -87,14 +94,14 @@ html {
 
 .footer {
   display: flex;
-  width: 20vw;
+  width: 10vw;
   justify-content: space-between;
 }
 .footer p{
   padding: 6px 14px;
   border-radius: 12rem;
-  background-color: #fff;
-  color: black;
+  background-color: var(--haze);
+  color: var(--primary);
   font-weight: 800;
 }
 .footer button{

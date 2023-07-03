@@ -1,14 +1,15 @@
 import React from 'react'
 
-const Card = ({title,body,id}) => {
+const Card = ({ title, body, id }) => {
     return (
-        <div className="card">
+        <div className="card" id={`card${id}`}>
             <i class="fa fa-times" aria-hidden="true"></i>
-            <p>{id}</p>
+            {/* <p>{id}</p> */}
+
             <h2>
-             {title.substring(0,15)}...
+                {title.substring(0, 15)}...
             </h2>
-            <h3>{body.substring(0,100)}...</h3>
+            <h3>{body.substring(0, 100)}...</h3>
             <p>Mon,21 Dec 2020 14:57 GMT </p>
             <br />
             <div className="img">

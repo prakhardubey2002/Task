@@ -32,7 +32,9 @@ const AppProvider = ({ children }) => {
 
   }, [blogcount])
 
-  return <AppContext.Provider value={{ page, seTPage, blogcount, seTblogcount,filterdata, setFilterData,setLoad,SetData,load }} >{children}</AppContext.Provider>
+  return <AppContext.Provider value={{data, page, seTPage, blogcount, seTblogcount, filterdata, setFilterData, setLoad, SetData, load }} >
+    {children}
+  </AppContext.Provider>
 };
 const useGlobalContext = () => {
   return useContext(AppContext);
