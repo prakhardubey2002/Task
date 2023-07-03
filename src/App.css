@@ -13,7 +13,7 @@ html {
 }
 
 .App {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   height: auto;
   min-width: 100vw;
   background-color:
@@ -51,10 +51,17 @@ html {
   -moz-box-shadow: 7px 5px 14px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 7px 5px 14px -7px rgba(0, 0, 0, 0.75);
   position: relative;
+  transition: all 0.2s ease ;
+}
+.card:hover{
+  transform: scale(1.05);
 }
 .card .fa-times{
   position: absolute;
   right: 4%;
+}
+.card .fa-times:hover{
+  cursor: pointer;
 }
 .card .img img {
   width: 360px;
@@ -89,4 +96,9 @@ html {
   background-color: #fff;
   color: black;
   font-weight: 800;
+}
+.footer button{
+  outline: none;
+  border: none;
+  background: none;
 }

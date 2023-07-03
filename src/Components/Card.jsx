@@ -4,7 +4,7 @@ const Card = ({title,body,id}) => {
     return (
         <div className="card">
             <i class="fa fa-times" aria-hidden="true"></i>
-            {/* <p>{id}</p> */}
+            <p>{id}</p>
             <h2>
              {title.substring(0,15)}...
             </h2>
