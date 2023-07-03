@@ -1,10 +1,11 @@
 import React, { useEffect,useState } from 'react'
 import Card from './Card'
-
+import { useGlobalContext } from './context';
 const Display = () => {
+    const {page,seTPage,blogcount,seTblogcount}=useGlobalContext();
+
     const [data,SetData]=useState();
     const [load,setLoad]=useState(false);
-    const [pagecount,seTPagecount]=useState(1);
     const [filterdata,setFilterData]=useState();
 
     useEffect(()=>{
@@ -17,8 +18,10 @@ const Display = () => {
             res=>{
                 // console.log(res);
                 SetData(res);
+                setFilterData( res?.filter(item=>
+                   item.id>blogcount-6 && item.id <=blogcount)
+                    );
                 setLoad(true);
-                setFilterData( data?.filter(item=>item.id <=6));
             }
         ).then(
             filterdata?.map((item)=>{
@@ -26,7 +29,7 @@ const Display = () => {
             })
         )
         
-    },[])
+    },[blogcount])
   return (
     <div className='cardbox' >
         {load && filterdata?.map((item)=>

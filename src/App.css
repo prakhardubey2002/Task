@@ -50,8 +50,12 @@ html {
   -webkit-box-shadow: 7px 5px 14px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 7px 5px 14px -7px rgba(0, 0, 0, 0.75);
   box-shadow: 7px 5px 14px -7px rgba(0, 0, 0, 0.75);
+  position: relative;
 }
-
+.card .fa-times{
+  position: absolute;
+  right: 4%;
+}
 .card .img img {
   width: 360px;
   height: 200px;
@@ -71,10 +75,18 @@ html {
 .card p {
   color: #e1e1e1;
   font-size: 1rem;
+ 
 }
 
 .footer {
   display: flex;
   width: 20vw;
   justify-content: space-between;
+}
+.footer p{
+  padding: 6px 14px;
+  border-radius: 12rem;
+  background-color: #fff;
+  color: black;
+  font-weight: 800;
 }
