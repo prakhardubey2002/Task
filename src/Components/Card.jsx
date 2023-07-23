@@ -1,9 +1,14 @@
 import React from 'react'
-
-const Card = ({ title, body, id }) => {
+import { useGlobalContext } from './context';
+const Card = ({ title, body, idx}) => {
+    const {filterdata, setFilterData}=useGlobalContext();
     return (
-        <div className="card" id={`card${id}`}>
-            <i class="fa fa-times" aria-hidden="true"></i>
+        <div className="card" id={`card${idx}`}>
+            <i class="fa fa-times" aria-hidden="true" onClick={(id)=>setFilterData(filterdata?.filter(item =>
+                item.id !== idx
+            ))} >
+
+            </i>
             {/* <p>{id}</p> */}
 
             <h2>

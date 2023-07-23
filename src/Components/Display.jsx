@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import Card from './Card'
 import { useGlobalContext } from './context';
 const Display = () => {
-    const {page, seTPage, blogcount, seTblogcount,filterdata, setFilterData,setLoad,SetData,load}=useGlobalContext();
+    const {page, seTPage, blogcount, seTblogcount,filterdata, setFilterData,setLoad,SetData,load,setremo}=useGlobalContext();
 
     // const [data,SetData]=useState();
     // const [load,setLoad]=useState(false);
@@ -33,7 +33,7 @@ const Display = () => {
   return (
     <div className='cardbox' >
         {load && filterdata?.map((item)=>
-            <Card key={item.id} id={item.id} title={item.title} body={item.body}  />
+            <Card key={item.id} idx={item.id} title={item.title} body={item.body} />
         ) }
        
         

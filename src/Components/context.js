@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-
+  const [rem, setremo] = useState(0)
   const [page, seTPage] = useState(1);
   const [blogcount, seTblogcount] = useState(6);
 
@@ -29,10 +29,13 @@ const AppProvider = ({ children }) => {
         console.log(item.id);
       })
     )
+    setFilterData(filterdata?.filter(item =>
+      item.id !== rem
+    ))
 
   }, [blogcount])
-
-  return <AppContext.Provider value={{data, page, seTPage, blogcount, seTblogcount, filterdata, setFilterData, setLoad, SetData, load }} >
+ 
+  return <AppContext.Provider value={{ data, page, seTPage, blogcount, seTblogcount, filterdata, setFilterData, setLoad, SetData, load, setremo }} >
     {children}
   </AppContext.Provider>
 };
